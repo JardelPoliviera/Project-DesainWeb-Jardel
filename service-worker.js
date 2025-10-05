@@ -6,8 +6,8 @@ const urlsToCache = [
   '/Project-DesainWeb-Jardel/contact.html',
   '/Project-DesainWeb-Jardel/offline.html',
   '/Project-DesainWeb-Jardel/style.css',
-  '/Project-DesainWeb-Jardel/icon-192x192.png',
-  '/Project-DesainWeb-Jardel/icon-512x512.png'
+  '/Project-DesainWeb-Jardel/image/icon-192x192.png',
+  '/Project-DesainWeb-Jardel/image/icon-512x512.png'
 ];
 
 self.addEventListener('install', event => {
@@ -30,7 +30,6 @@ self.addEventListener('fetch', event => {
         return fetch(event.request);
       })
       .catch(() => {
-        // PERBAIKAN DI SINI:
         return caches.match('/Project-DesainWeb-Jardel/offline.html');
       })
   );
