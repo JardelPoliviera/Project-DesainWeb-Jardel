@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Website Saya</title>
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h1>Hubungi Saya</h1>
+        <p>Anda dapat menghubungi saya melalui beberapa cara berikut:</p>
+        <ul>
+            <li><strong>Email:</strong> jardelpoliviera@gmail.com</li>
+            <li><strong>Telepon:</strong> 082269727118</li>
+        </ul>
+        <p>Atau hubingi Email saya secara langsung:</p>
+
+        <form id="contactForm" action="#" method="post">
+            <div class="form-group">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email Anda" required>
+            </div>
+
+            <div class="form-group">
+                <label for="kategori">Kategori Pesan:</label>
+                <select id="kategori" name="kategori" required>
+                    <option value="">--Pilih Kategori--</option>
+                    <option value="pertanyaan">Pertanyaan</option>
+                    <option value="saran">Saran</option>
+                    <option value="masalah">Masalah</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="pesan">Pesan:</label>
+                <textarea id="pesan" name="pesan" rows="6" placeholder="Tulis pesan Anda..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Opsi menerima balasan:</label>
+                <div>
+                    <input type="radio" id="balas_email" name="opsi_balasan" value="ya" checked>
+                    <label for="balas_email">Ya, saya ingin menerima balasan</label>
+                </div>
+                <div>
+                    <input type="radio" id="tidak_balas" name="opsi_balasan" value="tidak">
+                    <label for="tidak_balas">Tidak, tidak perlu dibalas</label>
+                </div>
+            </div>
+            
+            <button type="submit">Kirim Pesan</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('contactForm');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            alert('Form berhasil dikirim!');
+            
+            form.reset();
+        });
+    </script>
+
+</body>
+</html>

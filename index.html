@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>Home - Website Saya</title>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+
+   <div class="container">
+
+    <h1>Selamat Datang di Website Jardel</h1>
+    <p>
+        Ini adalah website latihan 1 untuk tugas Desain Web. Website ini berisi informasi dasar tentang saya dan cara menghubungi saya.
+    </p>
+
+    <hr>
+    <h2>Kini Menjadi Progressive Web App (PWA)</h2>
+    <p>
+        Website ini telah ditingkatkan menjadi PWA! Artinya, Anda dapat menginstalnya di perangkat Anda untuk akses yang lebih cepat seperti aplikasi native dan dapat diakses bahkan saat Anda sedang offline.
+    </p>
+    <button id="install-button" style="display:none; width: auto; padding: 10px 20px; margin-top: 10px;">Install App</button>
+    <hr>
+    <p>
+        Silakan jelajahi halaman lainnya melalui menu navigasi di atas.
+    </p>
+   </div>
+
+   <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+
+        let deferredPrompt;
+        const installButton = document.getElementById('install-button');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault(); 
+            deferredPrompt = e; 
+            installButton.style.display = 'block'; 
+        });
+
+        installButton.addEventListener('click', (e) => {
+            installButton.style.display = 'none'; 
+            deferredPrompt.prompt(); 
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                } else {
+                    console.log('User dismissed the install prompt');
+                }
+                deferredPrompt = null;
+            });
+        });
+   </script>
+
+</body>
+</html>

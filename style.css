@@ -1,0 +1,81 @@
+/* Mengatur gaya dasar untuk seluruh halaman */
+body {
+    font-family: Arial, sans-serif; 
+    background-color: #ffffff;      
+    color: #333;                   
+    line-height: 1.6;               
+    padding: 0;
+}
+
+.container {
+    width: 90%;                     
+    margin: auto;                   
+    overflow: hidden;               
+    padding: 20px 0;                
+}
+
+nav {
+    background: #015389;               
+    color: #000657;                    
+    padding: 15px 0;                
+    text-align: center;             
+}
+
+
+nav a {
+    color: #fff;                    
+    text-decoration: none;          
+    font-size: 18px;                
+    padding: 10px 15px;             
+}
+
+nav a:hover {
+    background-color: #00aaf8;         
+    border-radius: 5px;             
+}
+
+h1 {
+    color: #0056b3;                 
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 30px 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; 
+}
+
+button {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #0056b3; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #004a99;
+}

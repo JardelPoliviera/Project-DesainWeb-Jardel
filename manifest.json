@@ -1,0 +1,21 @@
+{
+  "name": "Website Latihan Jardel",
+  "short_name": "JardelWeb",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#015389",
+  "description": "Website latihan untuk tugas Desain Web oleh Jardel Poliviera.",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "png"
+    }
+  ]
+}
