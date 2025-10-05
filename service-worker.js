@@ -1,13 +1,13 @@
 const CACHE_NAME = 'jardel-website-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/about.html',
-  '/contact.html',
-  '/offline.html',
-  '/style.css',
-  '/images/icon-192x192.png',
-  '/images/icon-512x512.png'
+  '/Project-DesainWeb-Jardel/',
+  '/Project-DesainWeb-Jardel/index.html',
+  '/Project-DesainWeb-Jardel/about.html',
+  '/Project-DesainWeb-Jardel/contact.html',
+  '/Project-DesainWeb-Jardel/offline.html',
+  '/Project-DesainWeb-Jardel/style.css',
+  '/Project-DesainWeb-Jardel/images/icon-192x192.png',
+  '/Project-DesainWeb-Jardel/images/icon-512x512.png'
 ];
 
 self.addEventListener('install', event => {
