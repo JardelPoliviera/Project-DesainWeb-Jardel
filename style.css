@@ -1,81 +1,281 @@
-/* Mengatur gaya dasar untuk seluruh halaman */
+/* --- Global Styles & Color Palette --- */
+:root {
+    --charcoal-blue: #25343B;
+    --peach-puff: #FBEFDF;
+    --coral-red: #EC4E3D;
+    --muted-teal: #5FA59C;
+    --spotify-dark: #121212;
+    --spotify-gray: #b3b3b3;
+}
+
 body {
-    font-family: Arial, sans-serif; 
-    background-color: #ffffff;      
-    color: #333;                   
-    line-height: 1.6;               
-    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--charcoal-blue);
+    color: var(--peach-puff);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* --- Spotify-style Layout (Sidebar + Main) --- */
+.spotify-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 240px;
+    background-color: var(--spotify-dark);
+    padding: 24px;
+    flex-shrink: 0;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 32px;
+    overflow-y: auto;
 }
 
 .container {
-    width: 90%;                     
-    margin: auto;                   
-    overflow: hidden;               
-    padding: 20px 0;                
+    max-width: 960px;
+    margin: 0 auto;
 }
 
-nav {
-    background: #015389;               
-    color: #000657;                    
-    padding: 15px 0;                
-    text-align: center;             
+/* --- Sidebar Navigation --- */
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-
-nav a {
-    color: #fff;                    
-    text-decoration: none;          
-    font-size: 18px;                
-    padding: 10px 15px;             
+.sidebar nav a {
+    color: var(--spotify-gray);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: color 0.3s;
 }
 
-nav a:hover {
-    background-color: #00aaf8;         
-    border-radius: 5px;             
+.sidebar nav a:hover {
+    color: var(--peach-puff);
 }
 
+/* --- Typography & General Elements --- */
 h1 {
-    color: #0056b3;                 
+    font-size: 2.5rem;
+    color: var(--peach-puff);
+    margin-bottom: 16px;
 }
 
-hr {
-  border: none;
-  border-top: 1px solid #eee;
-  margin: 30px 0;
+h2 {
+    font-size: 1.8rem;
+    color: var(--peach-puff);
+    margin-top: 40px;
 }
 
-.form-group {
-  margin-bottom: 20px;
+p {
+    color: var(--spotify-gray);
+    line-height: 1.8;
+    max-width: 65ch; /* Batas lebar teks agar mudah dibaca */
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-  color: #333;
+/* --- Profile Card (About Page) --- */
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    background-color: #181818;
+    padding: 32px;
+    border-radius: 16px;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box; 
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--muted-teal);
+}
+
+.profile-info .subtitle {
+    font-size: 1.1rem;
+    color: var(--muted-teal);
+    margin-top: -10px;
+    font-weight: 600;
+}
+
+/* --- Modern Forms & Buttons --- */
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 8px;
+    color: var(--peach-puff);
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--muted-teal);
 }
 
 button {
-  width: 100%;
-  padding: 12px 20px;
-  background-color: #0056b3; 
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.2s;
+    padding: 14px 32px;
+    background-color: var(--coral-red);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
 }
 
 button:hover {
-  background-color: #004a99;
+    background-color: #d84534;
+    transform: scale(1.05);
+}
+
+/* --- Pokemon Section Styling --- */
+.pokemon-section {
+    margin-top: 50px;
+    background-color: #181818;
+    padding: 32px;
+    border-radius: 16px;
+}
+
+.pokemon-section h2 {
+    color: var(--peach-puff);
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--muted-teal); /* Garis bawah seperti judul Spotify */
+    padding-bottom: 10px;
+}
+
+.pokemon-card {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.pokemon-image {
+    width: 250px;
+    height: auto;
+    object-fit: contain;
+    background-color: #282828; /* Latar belakang untuk gambar Pokemon */
+    border-radius: 12px;
+    padding: 20px;
+    flex-shrink: 0; /* Mencegah gambar mengecil */
+}
+
+.pokemon-details {
+    flex-grow: 1;
+}
+
+.pokemon-details h3 {
+    font-size: 2rem;
+    color: var(--coral-red);
+    margin-bottom: 8px;
+}
+
+.pokemon-id {
+    font-size: 1.2rem;
+    color: var(--spotify-gray);
+    font-weight: 400;
+}
+
+.pokemon-description {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #999;
+    margin-bottom: 20px;
+    max-width: none; /* Override p max-width */
+}
+
+.pokemon-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 2 kolom responsif */
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.pokemon-types, .pokemon-weaknesses {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.type {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.85rem;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Warna untuk Tipe Pokemon */
+.type.electric { background-color: #F8D030; }
+.type.poison { background-color: #A040A0; }
+.type.ground { background-color: #E0C068; }
+.type.psychic { background-color: #F85888; }
+/* Tambahkan warna untuk tipe lain jika kamu ingin menambahkan Pokemon lain */
+
+
+/* --- Pokemon Stats Bars --- */
+.pokemon-stats {
+    background-color: #181818;
+    padding: 32px;
+    border-radius: 16px;
+    margin-top: 30px;
+}
+.pokemon-stats h3 {
+    color: var(--peach-puff);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.stats-bar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--spotify-gray);
+}
+
+.stat-item span {
+    width: 60px; /* Lebar tetap untuk nama stat */
+    text-align: right;
+    font-weight: 600;
+    font-size: 0.9rem;
+    flex-shrink: 0; /* Mencegah nama stat mengecil */
+}
+
+.bar {
+    flex-grow: 1;
+    height: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar .fill {
+    height: 100%;
+    background-color: var(--muted-teal); /* Warna teal untuk bar stat */
+    border-radius: 5px;
+    transition: width 0.5s ease-out;
 }
